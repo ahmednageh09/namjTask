@@ -1,0 +1,66 @@
+<div class="container">
+    <app-categories></app-categories>
+
+    <div class="filter-container my-5 mx-2">
+        <div class=" row ">
+            <div class="new col-sm-3 mx-2">الشكاوي الجديدة</div>
+            <div class="filters col-sm-8">
+                <div class="filter col-sm-3">
+                    <label for="form-select">التاريخ</label>
+                    <select class="form-select">
+                        <option selected>الكل</option>
+                        <option *ngFor="let issue of issues" [value]="issue.date">{{issue.date}}</option>
+                    </select>
+                </div>
+                <div class="filter col-sm-3">
+                    <label for="form-select">التصنيف</label>
+                    <select class="form-select">
+                        <option selected>الكل</option>
+                        <option *ngFor="let issue of issues" [value]="issue.type">{{issue.type}}</option>
+                    </select>
+                </div>
+                <div class="filter col-sm-3">
+                    <label for="form-select">الحالة</label>
+                    <select class="form-select">
+                        <option selected>الكل</option>
+                        <option *ngFor="let issue of issues" [value]="issue.status">{{issue.status}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-container my-5">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="head">
+                        <th>رقم الشكوي</th>
+                        <th>نوع الشكوي</th>
+                        <th>تاريخ الشكوي</th>
+                        <th>المدينة</th>
+                        <th>الادارة</th>
+                        <th>الحالة</th>
+                        <th>عرض</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let issue of issues; let i = index ">
+                        <td>{{i+1}}</td>
+                        <td>{{issue.type}}</td>
+                        <td>{{issue.date}}</td>
+                        <td>{{issue.city}}</td>
+                        <td>{{issue.admin}}</td>
+                        <td class="status">{{issue.status}}</td>
+                        <td class="icon">
+                            <a routerLink="/issue/{{issue.id}}">
+                                <i class="fa-regular fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,9 @@
+<div class="categories container-fluid mt-5">
+    <div class="row me-4">
+        <div class="category col-sm-6 " *ngFor="let category of categories; let i = index;"
+            [ngClass]="getCategoryClass(i+1)">
+            <h3 class="title">{{category.title}}</h3>
+            <p class="count">{{category.count}}</p>
+        </div>
+    </div>
+</div>

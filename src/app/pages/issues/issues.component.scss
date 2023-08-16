@@ -1,0 +1,95 @@
+.container {
+  .filter-container {
+    .new {
+      font-size: 22px;
+      font-weight: 500;
+      text-align: center;
+      line-height: 60px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .filter {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-top: 5px;
+
+        label {
+          font-weight: 500;
+          line-height: 50px;
+          color: #00000078;
+          text-align: center;
+          margin-left: 6px;
+        }
+
+        select {
+          width: 239px;
+          height: 50px;
+          color: #000000de;
+          font-size: 20px;
+          font-weight: 500;
+          width: 100px;
+          line-height: 24px;
+          background-color: #e7fff3;
+        }
+
+        @media (max-width:767px) {
+          select {
+            width: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .table-container {
+    table {
+      tr.head {
+        background-color: #33835c;
+
+        th {
+          background-color: #33835c;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 29px;
+          color: #ffffff;
+          text-align: center;
+        }
+      }
+
+      tr {
+        td {
+          text-align: center;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 29px;
+
+          &.status {
+            color: #ffab5f;
+          }
+
+          i {
+            color: #000000;
+            transition: color 0.3s ease;
+          }
+        }
+
+        &:hover {
+          td {
+            background-color: #f6f6f6;
+
+            &.icon {
+              i {
+                color: #3485aa;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
